@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CovidTracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y2D-On-vO8">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <color key="backgroundColor" name="colorPrimaryDark"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="B30-uq-fxz"/>
+                                </constraints>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="barTintColor" name="colorPrimaryDark"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <color key="textColor" name="colorWhite"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="Covid Tracker" id="Pbp-ER-nGx"/>
+                                </items>
+                            </navigationBar>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P0Q-JO-7Q2">
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vw0-4p-Kvd">
+                                        <rect key="frame" x="8" y="8" width="398" height="280"/>
+                                        <color key="backgroundColor" name="editTextBG"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="280" id="ay3-2F-APj"/>
+                                        </constraints>
+                                    </view>
+                                    <searchBar contentMode="redraw" placeholder="Country Search..." translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gYq-bv-STL">
+                                        <rect key="frame" x="8" y="296" width="398" height="44"/>
+                                        <color key="backgroundColor" name="colorWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="95h-63-ijB"/>
+                                        </constraints>
+                                        <color key="barTintColor" name="colorWhite"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </searchBar>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="JwB-tA-9ct">
+                                        <rect key="frame" x="8" y="340" width="398" height="468"/>
+                                        <color key="backgroundColor" name="colorWhite"/>
+                                        <color key="sectionIndexBackgroundColor" name="colorWhite"/>
+                                    </tableView>
+                                </subviews>
+                                <color key="backgroundColor" name="colorWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="JwB-tA-9ct" secondAttribute="bottom" id="C3m-Q3-8j3"/>
+                                    <constraint firstItem="gYq-bv-STL" firstAttribute="top" secondItem="vw0-4p-Kvd" secondAttribute="bottom" constant="8" id="UpG-pD-PtY"/>
+                                    <constraint firstItem="JwB-tA-9ct" firstAttribute="top" secondItem="gYq-bv-STL" secondAttribute="bottom" id="aIy-gl-Xfw"/>
+                                    <constraint firstItem="vw0-4p-Kvd" firstAttribute="top" secondItem="P0Q-JO-7Q2" secondAttribute="top" constant="8" id="bi6-3m-Tr7"/>
+                                    <constraint firstItem="gYq-bv-STL" firstAttribute="leading" secondItem="P0Q-JO-7Q2" secondAttribute="leading" constant="8" id="fW6-wC-hOY"/>
+                                    <constraint firstAttribute="trailing" secondItem="vw0-4p-Kvd" secondAttribute="trailing" constant="8" id="ilo-XE-6WX"/>
+                                    <constraint firstItem="vw0-4p-Kvd" firstAttribute="leading" secondItem="P0Q-JO-7Q2" secondAttribute="leading" constant="8" id="n0z-wQ-oJi"/>
+                                    <constraint firstAttribute="trailing" secondItem="gYq-bv-STL" secondAttribute="trailing" constant="8" id="rjN-Q9-9WP"/>
+                                    <constraint firstAttribute="trailing" secondItem="JwB-tA-9ct" secondAttribute="trailing" constant="8" id="tM5-Q1-oBr"/>
+                                    <constraint firstItem="JwB-tA-9ct" firstAttribute="leading" secondItem="P0Q-JO-7Q2" secondAttribute="leading" constant="8" id="u1s-ih-QFa"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" name="colorPrimaryDark"/>
+                        <constraints>
+                            <constraint firstItem="y2D-On-vO8" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="15j-6s-ImJ"/>
+                            <constraint firstItem="P0Q-JO-7Q2" firstAttribute="top" secondItem="y2D-On-vO8" secondAttribute="bottom" id="E7A-iB-gRf"/>
+                            <constraint firstItem="P0Q-JO-7Q2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Ehs-zK-1rd"/>
+                            <constraint firstItem="y2D-On-vO8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="J3x-72-mab"/>
+                            <constraint firstAttribute="bottom" secondItem="P0Q-JO-7Q2" secondAttribute="bottom" id="Vhx-ea-eBp"/>
+                            <constraint firstItem="y2D-On-vO8" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="oXb-5a-aLK"/>
+                            <constraint firstItem="P0Q-JO-7Q2" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="sdp-hj-aHS"/>
+                            <constraint firstItem="P0Q-JO-7Q2" firstAttribute="top" secondItem="y2D-On-vO8" secondAttribute="bottom" id="tol-5Z-boz"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="121.73913043478262" y="70.982142857142847"/>
+        </scene>
+    </scenes>
+    <resources>
+        <namedColor name="colorPrimaryDark">
+            <color red="0.11372549019607843" green="0.19607843137254902" blue="0.35294117647058826" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="colorWhite">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="editTextBG">
+            <color red="0.88627450980392153" green="0.92156862745098034" blue="0.98431372549019602" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
