@@ -36,8 +36,18 @@
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vw0-4p-Kvd">
                                         <rect key="frame" x="8" y="8" width="398" height="280"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Global Summary" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pnM-nd-511">
+                                                <rect key="frame" x="8" y="8" width="108.5" height="19.5"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="14"/>
+                                                <color key="textColor" name="textColorPrimary"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
                                         <color key="backgroundColor" name="editTextBG"/>
                                         <constraints>
+                                            <constraint firstItem="pnM-nd-511" firstAttribute="leading" secondItem="vw0-4p-Kvd" secondAttribute="leading" constant="8" id="1qP-Lo-pNQ"/>
+                                            <constraint firstItem="pnM-nd-511" firstAttribute="top" secondItem="vw0-4p-Kvd" secondAttribute="top" constant="8" id="Uvc-1w-vMw"/>
                                             <constraint firstAttribute="height" constant="280" id="ay3-2F-APj"/>
                                         </constraints>
                                     </view>
@@ -99,6 +109,9 @@
         </namedColor>
         <namedColor name="editTextBG">
             <color red="0.88627450980392153" green="0.92156862745098034" blue="0.98431372549019602" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="textColorPrimary">
+            <color red="0.17254901960784313" green="0.17254901960784313" blue="0.17254901960784313" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>
