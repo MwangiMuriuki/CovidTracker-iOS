@@ -1,20 +1,24 @@
 PODS:
   - Alamofire (5.4.3)
+  - SwiftyJSON (5.0.1)
   - Wormholy (1.6.4)
 
 DEPENDENCIES:
   - Alamofire
+  - SwiftyJSON
   - Wormholy
 
 SPEC REPOS:
   trunk:
     - Alamofire
+    - SwiftyJSON
     - Wormholy
 
 SPEC CHECKSUMS:
   Alamofire: e447a2774a40c996748296fa2c55112fdbbc42f9
+  SwiftyJSON: 2f33a42c6fbc52764d96f13368585094bfd8aa5e
   Wormholy: 2e70f64227e010d363f8d33268369f77faf12471
 
-PODFILE CHECKSUM: 7ca988eb7423a0638eda7f0a221fae08af13c7de
+PODFILE CHECKSUM: bbb1830bcc477441a79bbeb09fa2f2a2e55d784a
 
 COCOAPODS: 1.11.0

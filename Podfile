@@ -8,5 +8,6 @@ target 'CovidTracker' do
   # Pods for CovidTracker
 pod 'Alamofire'
 pod 'Wormholy'
+pod 'SwiftyJSON'
 
 end
