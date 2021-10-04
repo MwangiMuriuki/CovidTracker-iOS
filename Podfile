@@ -9,5 +9,7 @@ target 'CovidTracker' do
 pod 'Alamofire'
 pod 'Wormholy'
 pod 'SwiftyJSON'
+pod 'Charts'
+pod 'IQKeyboardManager'
 
 end

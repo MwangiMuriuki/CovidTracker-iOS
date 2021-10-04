@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -31,7 +32,7 @@
                                     <navigationItem title="Covid Tracker" id="Pbp-ER-nGx"/>
                                 </items>
                             </navigationBar>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P0Q-JO-7Q2">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P0Q-JO-7Q2" userLabel="mainContentView">
                                 <rect key="frame" x="0.0" y="88" width="414" height="808"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vw0-4p-Kvd">
@@ -43,22 +44,37 @@
                                                 <color key="textColor" name="textColorPrimary"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FRU-mO-xVa" customClass="PieChartView" customModule="Charts">
+                                                <rect key="frame" x="8" y="35.5" width="382" height="236.5"/>
+                                                <color key="backgroundColor" name="colorWhite"/>
+                                                <color key="tintColor" name="colorPrimaryDark"/>
+                                            </view>
                                         </subviews>
-                                        <color key="backgroundColor" name="editTextBG"/>
+                                        <color key="backgroundColor" name="colorWhite"/>
                                         <constraints>
                                             <constraint firstItem="pnM-nd-511" firstAttribute="leading" secondItem="vw0-4p-Kvd" secondAttribute="leading" constant="8" id="1qP-Lo-pNQ"/>
+                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="pnM-nd-511" secondAttribute="trailing" constant="20" symbolic="YES" id="9Rx-Pf-cGg"/>
+                                            <constraint firstAttribute="trailing" secondItem="FRU-mO-xVa" secondAttribute="trailing" constant="8" id="Ouc-WN-Kpv"/>
+                                            <constraint firstAttribute="bottom" secondItem="FRU-mO-xVa" secondAttribute="bottom" constant="8" id="SCB-jg-ewv"/>
                                             <constraint firstItem="pnM-nd-511" firstAttribute="top" secondItem="vw0-4p-Kvd" secondAttribute="top" constant="8" id="Uvc-1w-vMw"/>
+                                            <constraint firstItem="FRU-mO-xVa" firstAttribute="top" secondItem="pnM-nd-511" secondAttribute="bottom" constant="8" id="WcN-3z-XSu"/>
                                             <constraint firstAttribute="height" constant="280" id="ay3-2F-APj"/>
+                                            <constraint firstItem="FRU-mO-xVa" firstAttribute="leading" secondItem="vw0-4p-Kvd" secondAttribute="leading" constant="8" id="siy-bP-tDg"/>
                                         </constraints>
                                     </view>
-                                    <searchBar contentMode="redraw" placeholder="Country Search..." translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gYq-bv-STL">
+                                    <searchBar contentMode="redraw" placeholder="Country Search..." translatesAutoresizingMaskIntoConstraints="NO" id="gYq-bv-STL">
                                         <rect key="frame" x="8" y="296" width="398" height="44"/>
-                                        <color key="backgroundColor" name="colorWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="95h-63-ijB"/>
                                         </constraints>
+                                        <color key="tintColor" name="textColorPrimary"/>
                                         <color key="barTintColor" name="colorWhite"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="searchField.textColor">
+                                                <color key="value" name="textColorPrimary"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </searchBar>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="JwB-tA-9ct">
                                         <rect key="frame" x="8" y="340" width="398" height="468"/>
@@ -94,6 +110,11 @@
                             <constraint firstItem="P0Q-JO-7Q2" firstAttribute="top" secondItem="y2D-On-vO8" secondAttribute="bottom" id="tol-5Z-boz"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="pieChart" destination="FRU-mO-xVa" id="Pga-Om-voe"/>
+                        <outlet property="searchBar" destination="gYq-bv-STL" id="NiQ-VK-6Lk"/>
+                        <outlet property="tableView" destination="JwB-tA-9ct" id="2VC-Zl-wJG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -106,9 +127,6 @@
         </namedColor>
         <namedColor name="colorWhite">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="editTextBG">
-            <color red="0.88627450980392153" green="0.92156862745098034" blue="0.98431372549019602" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="textColorPrimary">
             <color red="0.17254901960784313" green="0.17254901960784313" blue="0.17254901960784313" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

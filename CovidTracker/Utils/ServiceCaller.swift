@@ -15,7 +15,7 @@ class ServiceCaller{
     var delegate: ServiceCallerDelegate?
     //MARK :- Methods
     
-    func makeRequest(url : String, headers: [String : String]?, requestBody: [String : String]?, method: HTTPMethod = .post, addHeaders : Bool = false, progresslabel: String = "", showProgress: Bool = true) {
+    func makeRequest(url : String, requestBody: [String : String]?, method: HTTPMethod = .post, addHeaders : Bool = false, progresslabel: String = "", showProgress: Bool = true) {
         
         var headersValue : HTTPHeaders = HTTPHeaders()
         
