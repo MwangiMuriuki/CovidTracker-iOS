@@ -11,6 +11,6 @@ import Foundation
 class Config{
     
     static let BASE_URL: String = "https://corona.lmao.ninja/v2/"
-    static let GLOBAL_ENDPOINT = "all";
-    static let COUNTRY_ENDPOINT = "countries";
+    static let GLOBAL_ENDPOINT = BASE_URL + "all";
+    static let COUNTRY_ENDPOINT = BASE_URL + "countries";
 }

@@ -28,7 +28,8 @@ class ViewController: UIViewController {
     }
     
     func setupTableView(){
-        tableView?.register(CountriesTableViewCell.self, forCellReuseIdentifier: "countriesTableViewCell")
+        let nib = UINib(nibName: "CountriesTableViewCell", bundle: nil)
+        tableView?.register(nib, forCellReuseIdentifier: "countriesTableViewCell")
         tableView.delegate = self
         tableView.dataSource = self
     }
@@ -47,7 +48,7 @@ class ViewController: UIViewController {
     
     func fetchCountryData(){
         activityIndicator.startAnimating()
-        serverurl = Config.BASE_URL + Config.COUNTRY_ENDPOINT
+        serverurl = Config.COUNTRY_ENDPOINT
         service.makeRequest(url: serverurl, requestBody: nil, method: .get)
     }
 
@@ -56,12 +57,15 @@ class ViewController: UIViewController {
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 45
+        return countryData.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "countriesTableViewCell", for: indexPath) as! CountriesTableViewCell
         
+        let countryDataList = countryData[indexPath.row]
+        cell.populateCountryData(with: countryDataList)
+        //cell.countryNameLabel.text = countryDataList.country
         return cell
     }
     
@@ -72,30 +76,36 @@ extension ViewController: ServiceCallerDelegate{
     func successResponse(response: Data) {
         activityIndicator.stopAnimating()
         do {
-            let response = try? JSONDecoder().decode(CountryData.self, from: response)
-            print("GResp: ",response)
+            let resp = try JSONDecoder().decode([CountryData].self, from: response)
+            print("GResp: ",resp)
             
-            self.countryDataList = response
+            countryData = resp
             
+            print("DataList: \(countryData)")
+            
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+
         }
         catch let DecodingError.dataCorrupted(context) {
             activityIndicator.stopAnimating()
-            print("GymContextError: ", context)
+            print("CDContextError: ", context)
         } catch let DecodingError.keyNotFound(key, context) {
             activityIndicator.stopAnimating()
             print("Key '\(key)' not found:", context.debugDescription)
-            print("GymcodingPath:", context.codingPath)
+            print("CDcodingPath:", context.codingPath)
         } catch let DecodingError.valueNotFound(value, context) {
             activityIndicator.stopAnimating()
             print("Value '\(value)' not found:", context.debugDescription)
-            print("GymcodingPath:", context.codingPath)
+            print("CDcodingPath:", context.codingPath)
         } catch let DecodingError.typeMismatch(type, context)  {
             activityIndicator.stopAnimating()
             print("Type '\(type)' mismatch:", context.debugDescription)
-            print("GymcodingPath:", context.codingPath)
+            print("CDcodingPath:", context.codingPath)
         } catch {
             activityIndicator.stopAnimating()
-            print("Gymerror: ", error)
+            print("CDerror: ", error)
         }
         
     }

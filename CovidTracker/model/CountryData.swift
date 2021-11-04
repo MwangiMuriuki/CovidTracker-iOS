@@ -25,10 +25,10 @@ struct CountryData: Codable{
 }
 
 struct CountryInfo: Codable{
-    var _id: Int
-    var iso2: String
-    var iso3: String
-    var lat: Int
-    var long: Int
-    var flag: String
+    var _id: Int?
+    var iso2: String?
+    var iso3: String?
+    var lat: Double?
+    var long: Double?
+    var flag: String?
 }

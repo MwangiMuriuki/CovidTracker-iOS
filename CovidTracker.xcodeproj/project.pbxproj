@@ -14,8 +14,6 @@
 		712C45BE270B590A00D5A529 /* CountryData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712C45BD270B590A00D5A529 /* CountryData.swift */; };
 		712C45C1270B6D6500D5A529 /* CountriesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712C45BF270B6D6500D5A529 /* CountriesTableViewCell.swift */; };
 		712C45C2270B6D6500D5A529 /* CountriesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 712C45C0270B6D6500D5A529 /* CountriesTableViewCell.xib */; };
-		7147067E26EBC6B40085A19A /* CountriesCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7147067C26EBC6B40085A19A /* CountriesCustomCell.swift */; };
-		7147067F26EBC6B40085A19A /* CountriesCustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7147067D26EBC6B40085A19A /* CountriesCustomCell.xib */; };
 		7188268E26EBA39C00F326FB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7188268D26EBA39C00F326FB /* AppDelegate.swift */; };
 		7188269026EBA39C00F326FB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7188268F26EBA39C00F326FB /* SceneDelegate.swift */; };
 		7188269226EBA39C00F326FB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7188269126EBA39C00F326FB /* ViewController.swift */; };
@@ -31,8 +29,6 @@
 		712C45BD270B590A00D5A529 /* CountryData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryData.swift; sourceTree = "<group>"; };
 		712C45BF270B6D6500D5A529 /* CountriesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesTableViewCell.swift; sourceTree = "<group>"; };
 		712C45C0270B6D6500D5A529 /* CountriesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CountriesTableViewCell.xib; sourceTree = "<group>"; };
-		7147067C26EBC6B40085A19A /* CountriesCustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesCustomCell.swift; sourceTree = "<group>"; };
-		7147067D26EBC6B40085A19A /* CountriesCustomCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CountriesCustomCell.xib; sourceTree = "<group>"; };
 		7188268A26EBA39C00F326FB /* CovidTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CovidTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7188268D26EBA39C00F326FB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7188268F26EBA39C00F326FB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -79,8 +75,6 @@
 		7147067B26EBC6570085A19A /* customViews */ = {
 			isa = PBXGroup;
 			children = (
-				7147067C26EBC6B40085A19A /* CountriesCustomCell.swift */,
-				7147067D26EBC6B40085A19A /* CountriesCustomCell.xib */,
 				712C45BF270B6D6500D5A529 /* CountriesTableViewCell.swift */,
 				712C45C0270B6D6500D5A529 /* CountriesTableViewCell.xib */,
 			);
@@ -214,7 +208,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7147067F26EBC6B40085A19A /* CountriesCustomCell.xib in Resources */,
 				7188269A26EBA39F00F326FB /* LaunchScreen.storyboard in Resources */,
 				712C45C2270B6D6500D5A529 /* CountriesTableViewCell.xib in Resources */,
 				71257D5D26EBA8E90044206C /* Colors.xcassets in Resources */,
@@ -279,7 +272,6 @@
 				7188268E26EBA39C00F326FB /* AppDelegate.swift in Sources */,
 				7188269026EBA39C00F326FB /* SceneDelegate.swift in Sources */,
 				712C45C1270B6D6500D5A529 /* CountriesTableViewCell.swift in Sources */,
-				7147067E26EBC6B40085A19A /* CountriesCustomCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
